@@ -10,6 +10,12 @@ body {
       font-family: 'Ubuntu', sans-serif;
 }
 
+.container {
+      width: 80%;
+      margin: auto;
+      padding: 50px 0;
+}
+
 .clearfix::after {
       content: "";
       display: table;
@@ -132,6 +138,23 @@ img {
 #main-right {
       min-height: calc(100% - 200px);
       background-image: url(../img/mine.jpg);
+}
+
+.sent,
+.received {
+      width: 200px;
+      height: 50px;
+      clear: both;
+      margin-top: 10px;
+      border-radius: 10px;
+}
+.sent {
+      float: right;
+      background-color: #d5f9ba;
+}
+.received {
+      float: left;
+      background-color: #ffffff;
 }
 
 #chat-bottom {
