@@ -33,7 +33,7 @@ body {
 }
 
 img {
-      height: 70px;
+      height: 60px;
       margin: 0 15px;
       border-radius: 50%;
 }
@@ -79,7 +79,7 @@ img {
 
 /* Top bars */
 .top {
-      height: 100px;
+      height: 80px;
       justify-content: space-between;
       background-color: #eaeaea;
 }
@@ -100,11 +100,11 @@ img {
 
 /* Left side */
 #main-left {
-      height: calc(100% - 100px);
+      height: calc(100% - 60px);
 }
 
 #notifications {
-      height: 120px;
+      height: 100px;
       padding-left: 30px;
       background-color: #8edafc;
 }
@@ -141,15 +141,34 @@ img {
       border: none;
       outline: none;
 }
+
 #chats {
       min-height: calc(100% - 180px);
       background-color: #ffffff;
+}
+
+.chat {
+      padding: 10px 0;
+      border-top: 1px solid #f7f7f7;
+}
+
+.chat-info {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-right: 10px;
+}
+.chat-info p{
+      font-size: 14px;
+      color: #b1b1b1;
 }
 /* --Left side */
 
 /* Right side */
 #main-right {
-      min-height: calc(100% - 200px);
+      min-height: calc(100% - 160px);
       background-image: url(../img/mine.jpg);
 }
 
@@ -159,8 +178,10 @@ img {
       width: 300px;
       height: 50px;
       clear: both;
+      padding: 15px 10px 0 10px;
       margin-top: 10px;
       border-radius: 10px;
+      font-size: 14px;
 }
 .sent {
       float: right;
@@ -169,6 +190,12 @@ img {
 .received {
       float: left;
       background-color: #ffffff;
+}
+
+.bubble-date {
+      font-size: 10px;
+      text-align: right;
+      color: #b1b1b1;
 }
 /* --Bubble messages */
 
@@ -181,5 +208,10 @@ img {
 }
 #chat-bottom input {
       width: 100%;
+      height: calc(100% - 30px);
+      border: none;
+      border-radius: 5px;
+      padding: 0 20px;
+      outline: none;
 }
 /* --Right side */

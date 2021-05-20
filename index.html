@@ -48,7 +48,18 @@
                                     </div>
                               </div>
                               <div id="chats" class="overflow">
-
+                                    <div v-for="(contact, index) in contacts" class="chat vert-align">
+                                          <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="#">
+                                          <div class="chat-info">
+                                                <div>
+                                                      <span>{{contact.name}}</span>
+                                                      <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                                <div>
+                                                      <p>Lorem ipsum dolor sit amet.</p>
+                                                </div>
+                                          </div>
+                                    </div>
                               </div>
                         </div>
                   </div>
@@ -72,9 +83,18 @@
                         </div>
                         <div id="main-right" class="overflow">
                               <div class="container clearfix">
-                                    <div class="sent"></div>
-                                    <div class="sent"></div>
-                                    <div class="received"></div>
+                                    <div class="sent">
+                                          <div class="bubble-text">Lorem ipsum dolor sit amet.</div>
+                                          <div class="bubble-date">Lorem ipsum dolor sit amet.</div>
+                                    </div>
+                                    <div class="sent">
+                                          <div class="bubble-text">Lorem ipsum dolor sit amet.</div>
+                                          <div class="bubble-date">Lorem ipsum dolor sit amet.</div>
+                                    </div>
+                                    <div class="received">
+                                          <div class="bubble-text">Lorem ipsum dolor sit amet.</div>
+                                          <div class="bubble-date">Lorem ipsum dolor sit amet.</div>
+                                    </div>
                               </div>
                         </div>
                         <div class="top vert-align" id="chat-bottom">
