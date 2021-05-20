@@ -1,3 +1,4 @@
+/* Common */
 * {
       box-sizing: border-box;
       margin: 0;
@@ -31,6 +32,14 @@ body {
       overflow-y: scroll;
 }
 
+img {
+      height: 70px;
+      margin: 0 15px;
+      border-radius: 50%;
+}
+/* --Common */
+
+/* Background colors */
 #bkg-top {
       height: 180px;
       background-color: #009587;
@@ -39,6 +48,9 @@ body {
       height: calc(100% - 180px);
       background-image: linear-gradient(to bottom, #dddbd1, #d1dadb);
 }
+/* --Background colors */
+
+/* Vue instance */
 #root {
       width: 1600px;
       height: 900px;
@@ -47,7 +59,9 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
 }
+/* --Vue instance */
 
+/* Layout */
 #left-side,
 #right-side {
       float: left;
@@ -61,13 +75,14 @@ body {
       width: 65%;
       height: 100%;
 }
+/* --Layout */
 
+/* Top bars */
 .top {
       height: 100px;
       justify-content: space-between;
       background-color: #eaeaea;
 }
-
 .top-left p {
       margin-top: 5px;
       font-size: 14px;
@@ -81,13 +96,9 @@ body {
 .icons i {
       margin: 0 10px;
 }
+/* --Top bars */
 
-img {
-      height: 70px;
-      margin: 0 15px;
-      border-radius: 50%;
-}
-
+/* Left side */
 #main-left {
       height: calc(100% - 100px);
 }
@@ -134,15 +145,18 @@ img {
       min-height: calc(100% - 180px);
       background-color: #ffffff;
 }
+/* --Left side */
 
+/* Right side */
 #main-right {
       min-height: calc(100% - 200px);
       background-image: url(../img/mine.jpg);
 }
 
+/* Bubble messages */
 .sent,
 .received {
-      width: 200px;
+      width: 300px;
       height: 50px;
       clear: both;
       margin-top: 10px;
@@ -156,6 +170,7 @@ img {
       float: left;
       background-color: #ffffff;
 }
+/* --Bubble messages */
 
 #chat-bottom {
       color: #6b7376;
@@ -167,3 +182,4 @@ img {
 #chat-bottom input {
       width: 100%;
 }
+/* --Right side */
