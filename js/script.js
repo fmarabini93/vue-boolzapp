@@ -86,10 +86,13 @@ const app = new Vue(
                         }
                     ],
                 },
-            ]
+            ],
+            activeContact : 0
         },
         methods: {
-            
+            selectContact: function(newContact) {
+                this.activeContact = newContact;
+            }
         }
     }
 );

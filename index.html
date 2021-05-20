@@ -48,7 +48,7 @@
                                     </div>
                               </div>
                               <div id="chats" class="overflow">
-                                    <div v-for="(contact, index) in contacts" class="chat vert-align">
+                                    <div v-for="(contact, index) in contacts" :class="{'active' : index == activeContact}" @click="selectContact(index)" class="chat vert-align">
                                           <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="#">
                                           <div class="chat-info">
                                                 <div>
