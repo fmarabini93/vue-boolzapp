@@ -53,10 +53,10 @@
                                           <div class="chat-info">
                                                 <div>
                                                       <span>{{contact.name}}</span>
-                                                      <p>Lorem ipsum dolor sit amet.</p>
+                                                      <p>{{contact.messages[0].text}}</p>
                                                 </div>
                                                 <div>
-                                                      <p>Lorem ipsum dolor sit amet.</p>
+                                                      <p class="bubble-date">{{contact.messages[0].date}}</p>
                                                 </div>
                                           </div>
                                     </div>
@@ -72,7 +72,7 @@
                                     <img src="img/avatar_1.jpg" alt="Avatar1">
                                     <div>
                                           <span>Michele</span>
-                                          <p>Last seen today at 11:43 am</p>
+                                          <p>Last seen {{contacts[0].messages[2].date}}</p>
                                     </div>
                               </div>
                               <div class="icons">
@@ -84,16 +84,16 @@
                         <div id="main-right" class="overflow">
                               <div class="container clearfix">
                                     <div class="sent">
-                                          <div class="bubble-text">Lorem ipsum dolor sit amet.</div>
-                                          <div class="bubble-date">Lorem ipsum dolor sit amet.</div>
+                                          <div class="bubble-text">{{contacts[0].messages[0].text}}</div>
+                                          <div class="bubble-date">{{contacts[0].messages[0].date}}</div>
                                     </div>
                                     <div class="sent">
-                                          <div class="bubble-text">Lorem ipsum dolor sit amet.</div>
-                                          <div class="bubble-date">Lorem ipsum dolor sit amet.</div>
+                                          <div class="bubble-text">{{contacts[0].messages[1].text}}</div>
+                                          <div class="bubble-date">{{contacts[0].messages[1].date}}</div>
                                     </div>
                                     <div class="received">
-                                          <div class="bubble-text">Lorem ipsum dolor sit amet.</div>
-                                          <div class="bubble-date">Lorem ipsum dolor sit amet.</div>
+                                          <div class="bubble-text">{{contacts[0].messages[2].text}}</div>
+                                          <div class="bubble-date">{{contacts[0].messages[2].date}}</div>
                                     </div>
                               </div>
                         </div>
