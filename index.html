@@ -5,6 +5,8 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <script src="js/vue.js"></script>
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="css/all.css">
             <link rel="stylesheet" href="css/style.css">
             <title>Boolzapp</title>
@@ -14,15 +16,30 @@
             <div id="bkg-main"></div>
             <div id="root" class="clearfix">
                   <div id="left-side">
-                        <div class="top">
-
+                        <div class="top vert-align">
+                              <div class="top-left vert-align">
+                                    <img src="img/avatar_io.jpg" alt="MyAvatar">
+                                    <span><strong>Me</strong></span>
+                              </div>
+                              <div class="icons">
+                                    <i class="fas fa-2x fa-circle-notch"></i>
+                                    <i class="far fa-2x fa-comment-alt"></i>
+                                    <i class="fas fa-2x fa-ellipsis-v"></i>
+                              </div>
                         </div>
                         <div id="main-left">
-                              <div id="notifications">
-
+                              <div id="notifications" class="vert-align">
+                                    <i class="fas fa-2x fa-bell-slash"></i>
+                                    <div>
+                                          <span>Receive an alert for new messages</span><br>
+                                          <a href="#">Turn on desktop notifications</a>
+                                    </div>
                               </div>
-                              <div id="search">
-
+                              <div id="search" class="vert-align">
+                                    <div id="search-bar" class="vert-align">
+                                          <i class="fas fa-search"></i>
+                                          <input type="text" placeholder="Search or start a new chat">
+                                    </div>
                               </div>
                               <div id="chats" class="overflow">
 
@@ -30,14 +47,27 @@
                         </div>
                   </div>
                   <div id="right-side">
-                        <div class="top">
-
+                        <div class="top vert-align">
+                              <div class="top-left vert-align">
+                                    <img src="img/avatar_1.jpg" alt="Avatar1">
+                                    <div>
+                                          <span>Michele</span>
+                                          <p>Last seen today at 11:43 am</p>
+                                    </div>
+                              </div>
+                              <div class="icons">
+                                    <i class="fas fa-2x fa-search"></i>
+                                    <i class="fas fa-2x fa-paperclip"></i>
+                                    <i class="fas fa-2x fa-ellipsis-v"></i>
+                              </div>
                         </div>
                         <div id="main-right" class="overflow">
 
                         </div>
-                        <div class="top" id="chat-bottom">
-
+                        <div class="top vert-align" id="chat-bottom">
+                              <i class="far fa-2x fa-smile"></i>
+                              <input type="text" placeholder="Type a message">
+                              <i class="fas fa-2x fa-microphone"></i>
                         </div>
                   </div>
             </div>

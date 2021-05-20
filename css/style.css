@@ -7,12 +7,18 @@
 body {
       height: 100vh;
       position: relative;
+      font-family: 'Ubuntu', sans-serif;
 }
 
 .clearfix::after {
       content: "";
       display: table;
       clear: both;
+}
+
+.vert-align {
+      display: flex;
+      align-items: center;
 }
 
 .overflow {
@@ -52,9 +58,28 @@ body {
 
 .top {
       height: 100px;
-      display: flex;
       justify-content: space-between;
       background-color: #eaeaea;
+}
+
+.top-left p {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #b1b1b1
+}
+
+.icons {
+      color: #b1b1b1;
+      margin-right: 20px;
+}
+.icons i {
+      margin: 0 10px;
+}
+
+img {
+      height: 70px;
+      margin: 0 15px;
+      border-radius: 50%;
 }
 
 #main-left {
@@ -63,14 +88,42 @@ body {
 
 #notifications {
       height: 120px;
+      padding-left: 30px;
       background-color: #8edafc;
+}
+#notifications i {
+      padding: 15px;
+      border-radius: 50%;
+      margin-right: 15px;
+      color: #8edafc;
+      background-color: #ffffff;
+}
+#notifications a {
+      display: inline-block;
+      margin-top: 5px;
+      color: #6b7376;
 }
 
 #search {
       height: 60px;
+      padding: 0 15px;
       background-color: #fafafa     ;
 }
 
+#search-bar {
+      width: 100%;
+      height: 30px;
+      background-color: #ffffff;
+}
+#search-bar i {
+      display: inline-block;
+      padding: 0 30px;
+      color: #b1b1b1;
+}
+#search-bar input {
+      border: none;
+      outline: none;
+}
 #chats {
       min-height: calc(100% - 180px);
       background-color: #ffffff;
@@ -82,5 +135,12 @@ body {
 }
 
 #chat-bottom {
+      color: #6b7376;
       background-color: #f3eeea;
+}
+#chat-bottom i {
+      padding: 0 40px;
+}
+#chat-bottom input {
+      width: 100%;
 }
