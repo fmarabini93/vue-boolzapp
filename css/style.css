@@ -1,0 +1,75 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+}
+
+body {
+      height: 100vh;
+      position: relative;
+}
+
+.clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+}
+
+#bkg-top {
+      height: 200px;
+      background-color: #009587;
+}
+#bkg-main {
+      height: calc(100% - 200px);
+      background-image: linear-gradient(to bottom, #dddbd1, #d1dadb);
+}
+#root {
+      width: 1600px;
+      height: 900px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+}
+
+#left-side,
+#right-side {
+      float: left;
+}
+#left-side {
+      width: 35%;
+      height: 100%;
+}
+#right-side {
+      width: 65%;
+      height: 100%;
+}
+
+.top {
+      height: 100px;
+      background-color: grey;
+}
+
+#main-left {
+      height: calc(100% - 100px);
+}
+
+#notifications {
+      height: 120px;
+      background-color: hotpink;
+}
+
+#search {
+      height: 60px;
+      background-color: indigo;
+}
+
+#chats {
+      min-height: calc(100% - 180px);
+      background-color: khaki;
+}
+
+#main-right {
+      min-height: calc(100% - 200px);
+      background-color: blue;
+}
