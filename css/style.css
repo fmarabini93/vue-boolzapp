@@ -15,12 +15,16 @@ body {
       clear: both;
 }
 
+.overflow {
+      overflow-y: scroll;
+}
+
 #bkg-top {
-      height: 200px;
+      height: 180px;
       background-color: #009587;
 }
 #bkg-main {
-      height: calc(100% - 200px);
+      height: calc(100% - 180px);
       background-image: linear-gradient(to bottom, #dddbd1, #d1dadb);
 }
 #root {
@@ -39,6 +43,7 @@ body {
 #left-side {
       width: 35%;
       height: 100%;
+      border-right: 1px solid #d6d6d6;
 }
 #right-side {
       width: 65%;
@@ -47,7 +52,9 @@ body {
 
 .top {
       height: 100px;
-      background-color: grey;
+      display: flex;
+      justify-content: space-between;
+      background-color: #eaeaea;
 }
 
 #main-left {
@@ -56,20 +63,24 @@ body {
 
 #notifications {
       height: 120px;
-      background-color: hotpink;
+      background-color: #8edafc;
 }
 
 #search {
       height: 60px;
-      background-color: indigo;
+      background-color: #fafafa     ;
 }
 
 #chats {
       min-height: calc(100% - 180px);
-      background-color: khaki;
+      background-color: #ffffff;
 }
 
 #main-right {
       min-height: calc(100% - 200px);
-      background-color: blue;
+      background-image: url(../img/mine.jpg);
+}
+
+#chat-bottom {
+      background-color: #f3eeea;
 }
