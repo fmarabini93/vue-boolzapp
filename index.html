@@ -69,10 +69,10 @@
                   <div id="right-side">
                         <div class="top vert-align">
                               <div class="top-left vert-align">
-                                    <img src="img/avatar_1.jpg" alt="Avatar1">
+                                    <img :src="'img/avatar_'+(activeContact+1)+'.jpg'" alt="Avatar1">
                                     <div>
-                                          <span>Michele</span>
-                                          <p>Last seen {{contacts[0].messages[2].date}}</p>
+                                          <span>{{contacts[activeContact].name}}</span>
+                                          <p>Last seen {{contacts[activeContact].messages[0].date}}</p>
                                     </div>
                               </div>
                               <div class="icons">
