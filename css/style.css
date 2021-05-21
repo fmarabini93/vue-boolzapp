@@ -42,6 +42,9 @@ img {
 i {
       cursor: pointer;
 }
+i:hover {
+      opacity: 0.5;
+}
 /* --Common */
 
 /* Background colors */
