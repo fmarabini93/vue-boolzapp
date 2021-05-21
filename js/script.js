@@ -200,6 +200,7 @@ const app = new Vue(
                     }
                     ,4000);
                 }
+                this.newMessageSent = "";
             },
             newSmile: function() {
                 this.typing = 1;
