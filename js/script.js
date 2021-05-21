@@ -93,13 +93,10 @@ const app = new Vue(
             time: ""
         },
         methods: {
-            currentDateTime: function() {
-
-            },
-            selectContact: function(newContact) {
+            selectContact: function(newContact) { //--> focus on clicked contact
                 this.activeContact = newContact;
             },
-            newText: function() {
+            newText: function() { //--> add new message with current date
                 if (this.newMessage.length > 0) {
                     let current = new Date();
                     this.date = current.getDate()+'/'+(current.getMonth()+1)+'/'+current.getFullYear();
