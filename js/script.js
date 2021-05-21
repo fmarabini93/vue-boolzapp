@@ -115,6 +115,25 @@ const app = new Vue(
                     ,1000);
                 }
                 this.newMessage = "";
+            },
+            newSmile: function() {
+                this.contacts[this.activeContact].messages.push(
+                    {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: ":-)",
+                        status: 'sent'
+                    }
+                );
+                setTimeout(() => {
+                    this.contacts[this.activeContact].messages.push(
+                        {
+                            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                            text: ":-)",
+                            status: 'received'
+                        }
+                    );
+                }
+                ,1000);
             }
         }
 
