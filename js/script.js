@@ -167,7 +167,8 @@ const app = new Vue(
             ],
             activeContact : 0,
             newMessageSent: "",
-            newMessageReceived: ["Ok", "Hello!", "How are you?", "How's the weather today?", "Please send me a letter", "Remember going to dentist", "Take shoes off when entering home", "Go to grocery", "Fine. thanks", "Wow!"]
+            newMessageReceived: ["Ok", "Hello!", "How are you?", "How's the weather today?", "Please send me a letter", "Remember going to dentist", "Take shoes off when entering home", "Go to grocery", "Fine. thanks", "Wow!"],
+            typing: 0
         },
         methods: {
             getRndNum : function(min, max) {
@@ -178,6 +179,7 @@ const app = new Vue(
                 this.newMessageSent = "";
             },
             newText: function() { //--> add new message with current date
+                this.typing = 1;
                 if (this.newMessageSent.length > 0) {
                     this.contacts[this.activeContact].messages.push(
                         {
@@ -187,6 +189,7 @@ const app = new Vue(
                         }
                     );
                     setTimeout(() => {
+                        this.typing = 0;
                         this.contacts[this.activeContact].messages.push(
                             {
                                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -197,9 +200,9 @@ const app = new Vue(
                     }
                     ,4000);
                 }
-                this.newMessageSent = "";
             },
             newSmile: function() {
+                this.typing = 1;
                 if (this.newMessageSent.length == 0) {
                     this.contacts[this.activeContact].messages.push(
                         {
@@ -209,6 +212,7 @@ const app = new Vue(
                         }
                     );
                     setTimeout(() => {
+                        this.typing = 0;
                         this.contacts[this.activeContact].messages.push(
                             {
                                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
