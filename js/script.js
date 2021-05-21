@@ -87,11 +87,32 @@ const app = new Vue(
                     ],
                 },
             ],
-            activeContact : 0
+            activeContact : 0,
+            newMessage: "",
+            date: "",
+            time: ""
         },
         methods: {
+            currentDateTime: function() {
+
+            },
             selectContact: function(newContact) {
                 this.activeContact = newContact;
+            },
+            newText: function() {
+                if (this.newMessage.length > 0) {
+                    let current = new Date();
+                    this.date = current.getDate()+'/'+(current.getMonth()+1)+'/'+current.getFullYear();
+                    this.time = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+                    this.contacts[this.activeContact].messages.push(
+                        {
+                            date: this.date + ' ' + this.time,
+                            text: this.newMessage,
+                            status: 'sent'
+                        }
+                    );
+                }
+                this.newMessage = "";
             }
         }
     }
