@@ -83,9 +83,9 @@
                         </div>
                         <div id="main-right" class="overflow">
                               <div class="container clearfix">
-                                    <div v-for="n in contacts[activeContact].messages" :class="n.status == 'received' ? 'received' : 'sent'">
-                                          <p>{{n.text}}</p>
-                                          <p class="bubble-date">{{n.date}}</p>
+                                    <div v-for="message in contacts[activeContact].messages" :class="message.status == 'received' ? 'received' : 'sent'">
+                                          <p>{{message.text}}</p>
+                                          <p class="bubble-date">{{message.date}}</p>
                                     </div>
                               </div>
                         </div>
