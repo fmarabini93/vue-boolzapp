@@ -193,6 +193,7 @@ i {
       margin-top: 10px;
       border-radius: 10px;
       font-size: 14px;
+      word-wrap: break-word;
 }
 .sent {
       float: right;
