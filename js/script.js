@@ -167,8 +167,7 @@ const app = new Vue(
             ],
             activeContact : 0,
             newMessageSent: "",
-            newMessageReceived: ["Ok", "Hello!", "How are you?", "How's the weather today?", "Please send me a letter", "Remember going to dentist", "Take shoes off when entering home", "Go to grocery", "Fine. thanks", "Wow!"],
-            latestMessage: ""
+            newMessageReceived: ["Ok", "Hello!", "How are you?", "How's the weather today?", "Please send me a letter", "Remember going to dentist", "Take shoes off when entering home", "Go to grocery", "Fine. thanks", "Wow!"]
         },
         methods: {
             getRndNum : function(min, max) {
@@ -177,9 +176,6 @@ const app = new Vue(
             selectContact: function(newContact) { //--> focus on clicked contact
                 this.activeContact = newContact;
                 this.newMessageSent = "";
-            },
-            stringSplice: function() {
-
             },
             newText: function() { //--> add new message with current date
                 if (this.newMessageSent.length > 0) {
