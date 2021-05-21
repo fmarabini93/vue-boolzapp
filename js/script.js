@@ -179,7 +179,9 @@ const app = new Vue(
                 this.newMessageSent = "";
             },
             newText: function() { //--> add new message with current date
-                this.typing = 1;
+                setTimeout(() => {
+                    this.typing = 1;
+                },1500);
                 if (this.newMessageSent.length > 0) {
                     this.contacts[this.activeContact].messages.push(
                         {
@@ -197,13 +199,14 @@ const app = new Vue(
                                 status: 'received'
                             }
                         );
-                    }
-                    ,4000);
+                    },5000);
                 }
                 this.newMessageSent = "";
             },
             newSmile: function() {
-                this.typing = 1;
+                setTimeout(() => {
+                    this.typing = 1;
+                },1500);
                 if (this.newMessageSent.length == 0) {
                     this.contacts[this.activeContact].messages.push(
                         {
@@ -221,8 +224,7 @@ const app = new Vue(
                                 status: 'received'
                             }
                         );
-                    }
-                    ,4000);
+                    },5000);
                 } else {
                     this.newMessageSent += " :-)";
                 }
