@@ -171,6 +171,7 @@ i {
       padding-right: 10px;
 }
 .chat-info p:not(.bubble-date){
+      padding-top: 5px;
       font-size: 14px;
       color: #b1b1b1;
 }
