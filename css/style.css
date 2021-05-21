@@ -90,7 +90,7 @@ i {
 }
 .top-left p {
       margin-top: 5px;
-      font-size: 14px;
+      font-size: 12px;
       color: #b1b1b1
 }
 
@@ -203,6 +203,7 @@ i {
 }
 
 .bubble-date {
+      padding-top: 5px;
       font-size: 10px;
       text-align: right;
       color: #b1b1b1;
