@@ -88,9 +88,7 @@ const app = new Vue(
                 },
             ],
             activeContact : 0,
-            newMessage: "",
-            date: "",
-            time: ""
+            newMessage: ""
         },
         methods: {
             selectContact: function(newContact) { //--> focus on clicked contact
@@ -98,12 +96,9 @@ const app = new Vue(
             },
             newText: function() { //--> add new message with current date
                 if (this.newMessage.length > 0) {
-                    let current = new Date();
-                    this.date = current.getDate()+'/'+(current.getMonth()+1)+'/'+current.getFullYear();
-                    this.time = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
                     this.contacts[this.activeContact].messages.push(
                         {
-                            date: this.date + ' ' + this.time,
+                            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                             text: this.newMessage,
                             status: 'sent'
                         }
@@ -111,7 +106,7 @@ const app = new Vue(
                     setTimeout(() => {
                         this.contacts[this.activeContact].messages.push(
                             {
-                                date: this.date + ' ' + this.time,
+                                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                                 text: "Ok",
                                 status: 'received'
                             }
