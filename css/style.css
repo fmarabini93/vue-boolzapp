@@ -94,7 +94,7 @@ i:hover {
 .top-left p {
       margin-top: 5px;
       font-size: 12px;
-      color: #b1b1b1
+      color: #888888;
 }
 
 .icons {
@@ -132,7 +132,7 @@ i:hover {
 #search {
       height: 60px;
       padding: 0 15px;
-      background-color: #fafafa     ;
+      background-color: #fafafa;
 }
 
 #search-bar {
@@ -176,7 +176,7 @@ i:hover {
 .chat-info p:not(.bubble-date){
       padding-top: 5px;
       font-size: 14px;
-      color: #b1b1b1;
+      color: #999999;
 }
 /* --Left side */
 
@@ -211,7 +211,7 @@ i:hover {
       padding-top: 5px;
       font-size: 10px;
       text-align: right;
-      color: #b1b1b1;
+      color: #999999;
 }
 /* --Bubble messages */
 

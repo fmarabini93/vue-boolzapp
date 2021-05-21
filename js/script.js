@@ -166,18 +166,19 @@ const app = new Vue(
                 }
             ],
             activeContact : 0,
-            newMessage: ""
+            newMessageSent: ""
         },
         methods: {
             selectContact: function(newContact) { //--> focus on clicked contact
                 this.activeContact = newContact;
+                this.newMessageSent = "";
             },
             newText: function() { //--> add new message with current date
-                if (this.newMessage.length > 0) {
+                if (this.newMessageSent.length > 0) {
                     this.contacts[this.activeContact].messages.push(
                         {
                             date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                            text: this.newMessage,
+                            text: this.newMessageSent,
                             status: 'sent'
                         }
                     );
@@ -190,12 +191,12 @@ const app = new Vue(
                             }
                         );
                     }
-                    ,1000);
+                    ,4000);
                 }
-                this.newMessage = "";
+                this.newMessageSent = "";
             },
             newSmile: function() {
-                if (this.newMessage.length == 0) {
+                if (this.newMessageSent.length == 0) {
                     this.contacts[this.activeContact].messages.push(
                         {
                             date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -212,9 +213,9 @@ const app = new Vue(
                             }
                         );
                     }
-                    ,1000);
+                    ,4000);
                 } else {
-                    this.newMessage += " :-)";
+                    this.newMessageSent += " :-)";
                 }
             }
         }
