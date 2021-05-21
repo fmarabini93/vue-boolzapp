@@ -136,6 +136,5 @@ const app = new Vue(
                 ,1000);
             }
         }
-
     }
 );
