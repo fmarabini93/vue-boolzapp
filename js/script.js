@@ -108,6 +108,16 @@ const app = new Vue(
                             status: 'sent'
                         }
                     );
+                    setTimeout(() => {
+                        this.contacts[this.activeContact].messages.push(
+                            {
+                                date: this.date + ' ' + this.time,
+                                text: "Ok",
+                                status: 'received'
+                            }
+                        );
+                    }
+                    ,1000);
                 }
                 this.newMessage = "";
             }
