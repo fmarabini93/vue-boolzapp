@@ -73,7 +73,7 @@
                                     <img :src="'img/avatar_'+(activeContact+1)+'.jpg'" alt="Avatar1">
                                     <div>
                                           <span>{{contacts[activeContact].name}}</span>
-                                          <p v-if="typing == 1">Typing...</p>
+                                          <p v-if="typing == 1" class="typing">Typing</p>
                                           <p v-else>Last seen {{contacts[activeContact].messages[0].date}}</p>
                                     </div>
                               </div>
