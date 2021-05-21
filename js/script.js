@@ -166,12 +166,20 @@ const app = new Vue(
                 }
             ],
             activeContact : 0,
-            newMessageSent: ""
+            newMessageSent: "",
+            newMessageReceived: ["Ok", "Hello!", "How are you?", "How's the weather today?", "Please send me a letter", "Remember going to dentist", "Take shoes off when entering home", "Go to grocery", "Fine. thanks", "Wow!"],
+            latestMessage: ""
         },
         methods: {
+            getRndNum : function(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) ) + min;
+            },
             selectContact: function(newContact) { //--> focus on clicked contact
                 this.activeContact = newContact;
                 this.newMessageSent = "";
+            },
+            stringSplice: function() {
+
             },
             newText: function() { //--> add new message with current date
                 if (this.newMessageSent.length > 0) {
@@ -186,7 +194,7 @@ const app = new Vue(
                         this.contacts[this.activeContact].messages.push(
                             {
                                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                                text: "Ok",
+                                text: this.newMessageReceived[this.getRndNum(1, 10)],
                                 status: 'received'
                             }
                         );
