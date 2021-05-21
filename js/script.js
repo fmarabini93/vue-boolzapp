@@ -9,17 +9,17 @@ const app = new Vue(
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            date: '05/10/2021 15:30:55',
                             text: 'Have you taken dog for a walk?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: '05/10/2021 15:50:00',
                             text: 'Remember feeding him',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 16:15:22',
+                            date: '05/10/2021 16:15:22',
                             text: 'All done!',
                             status: 'received'
                         }
@@ -31,17 +31,17 @@ const app = new Vue(
                     visible: true,
                     messages: [
                         {
-                            date: '20/03/2020 16:30:00',
+                            date: '04/20/2021 16:30:00',
                             text: 'Hi, how are you?',
                             status: 'sent'
                         },
                         {
-                            date: '20/03/2020 16:30:55',
+                            date: '04/20/2021 16:30:55',
                             text: 'Fine thanks! Shall we meet tonight?',
                             status: 'received'
                         },
                         {
-                            date: '20/03/2020 16:35:00',
+                            date: '04/20/2021 16:35:00',
                             text: 'I would really like to, but sadly I have to go to grocery',
                             status: 'sent'
                         }
@@ -53,17 +53,17 @@ const app = new Vue(
                     visible: true,
                     messages: [
                         {
-                            date: '28/03/2020 10:10:40',
+                            date: '03/28/2021 10:10:40',
                             text: 'Marianne goes to countryside',
                             status: 'received'
                         },
                         {
-                            date: '28/03/2020 10:20:10',
+                            date: '03/28/2021 10:20:10',
                             text: 'Are you sure this is the right chat?',
                             status: 'sent'
                         },
                         {
-                            date: '28/03/2020 16:15:22',
+                            date: '03/28/2021 16:15:22',
                             text: 'Ah, sorry!',
                             status: 'received'
                         }
@@ -75,17 +75,95 @@ const app = new Vue(
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            date: '02/10/2021 15:30:55',
                             text: 'Do you know that a new pizzeria has opened?',
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: '02/10/2021 15:50:00',
                             text: 'Yes, but I prefer going to the cinema',
                             status: 'received'
                         }
                     ],
                 },
+                {
+                    name: 'John',
+                    avatar: '_5',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '01/12/2021 15:30:55',
+                            text: 'Waiting you to the party tonight!',
+                            status: 'received'
+                        },
+                        {
+                            date: '01/12/2021 15:50:00',
+                            text: 'Sure, 99% I will be there',
+                            status: 'sent'
+                        },
+                        {
+                            date: '01/12/2021 16:15:22',
+                            text: 'See you!',
+                            status: 'received'
+                        }
+                    ],
+                },
+                {
+                    name: 'Isabel',
+                    avatar: '_6',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '12/27/2020 15:30:55',
+                            text: 'My mum feels sick. Going hospital right now',
+                            status: 'received'
+                        },
+                        {
+                            date: '12/27/2020 15:50:00',
+                            text: 'Ok, waiting for news',
+                            status: 'sent'
+                        }
+                    ],
+                },
+                {
+                    name: 'Tom',
+                    avatar: '_7',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '11/07/2020 15:30:55',
+                            text: 'Have you seen new Nolan film?',
+                            status: 'received'
+                        },
+                        {
+                            date: '11/07/2020 15:50:00',
+                            text: 'No! So no spoilers please!',
+                            status: 'sent'
+                        }
+                    ],
+                },
+                {
+                    name: 'Philip',
+                    avatar: '_8',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/10/2020 15:30:55',
+                            text: 'Will you go to James party?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/10/2020 15:50:00',
+                            text: 'Yes, I think. And you?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/10/2020 16:15:22',
+                            text: 'Maybe, if he invites me!',
+                            status: 'received'
+                        }
+                    ],
+                }
             ],
             activeContact : 0,
             newMessage: ""
@@ -117,23 +195,27 @@ const app = new Vue(
                 this.newMessage = "";
             },
             newSmile: function() {
-                this.contacts[this.activeContact].messages.push(
-                    {
-                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                        text: ":-)",
-                        status: 'sent'
-                    }
-                );
-                setTimeout(() => {
+                if (this.newMessage.length == 0) {
                     this.contacts[this.activeContact].messages.push(
                         {
                             date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                             text: ":-)",
-                            status: 'received'
+                            status: 'sent'
                         }
                     );
+                    setTimeout(() => {
+                        this.contacts[this.activeContact].messages.push(
+                            {
+                                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                                text: ":-)",
+                                status: 'received'
+                            }
+                        );
+                    }
+                    ,1000);
+                } else {
+                    this.newMessage += " :-)";
                 }
-                ,1000);
             }
         }
     }
