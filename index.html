@@ -93,7 +93,8 @@
                         <div class="top vert-align" id="chat-bottom">
                               <i class="far fa-2x fa-smile"></i>
                               <input type="text" placeholder="Type a message" @keyup.enter="newText" v-model="newMessage">
-                              <i class="fas fa-2x fa-microphone"></i>
+                              <i v-if="newMessage.length > 0" @click="newText" class="fas fa-2x fa-paper-plane"></i>
+                              <i v-else class="fas fa-2x fa-microphone"></i>
                         </div>
                   </div>
                   <!-- /Right side -->
