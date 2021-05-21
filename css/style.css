@@ -42,12 +42,17 @@ img {
       border-radius: 50%;
       cursor: pointer;
 }
+img:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+}
 
 i {
       cursor: pointer;
 }
 i:hover {
       opacity: 0.5;
+      transition: 0.5s;
 }
 /* --Common */
 
@@ -167,6 +172,10 @@ i:hover {
       padding: 10px 0;
       border-top: 1px solid #f7f7f7;
       cursor: pointer;
+}
+.chat:hover {
+      opacity: 0.5;
+      transition: 0.5s;
 }
 
 .chat-info {
