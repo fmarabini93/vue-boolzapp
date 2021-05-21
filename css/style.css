@@ -32,6 +32,10 @@ body {
       overflow-y: scroll;
 }
 
+.inline-b {
+      display: inline-block;
+}
+
 img {
       height: 60px;
       margin: 0 15px;
@@ -177,6 +181,10 @@ i:hover {
       padding-top: 5px;
       font-size: 14px;
       color: #999999;
+}
+
+.name {
+      display: block;
 }
 /* --Left side */
 

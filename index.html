@@ -53,8 +53,8 @@
                                           <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="#">
                                           <div class="chat-info">
                                                 <div>
-                                                      <span>{{contact.name}}</span>
-                                                      <p>{{contact.messages[contact.messages.length - 1].text.substr(0, 30)}}&hellip;</p>
+                                                      <span class="name">{{contact.name}}</span>
+                                                      <p class="inline-b">{{contact.messages[contact.messages.length - 1].text.substr(0, 30)}}<span v-if="contact.messages[contact.messages.length - 1].text.length > 30">&hellip;</span></p>
                                                 </div>
                                                 <div>
                                                       <p class="bubble-date">{{contact.messages[contact.messages.length - 1].date}}</p>
