@@ -233,9 +233,7 @@ const app = new Vue(
             },
             filterContacts: function() {
                 for (let i = 0; i < this.contacts.length; i++) {
-                    if (this.contacts[i].name.toLowerCase().startsWith(this.search)) {
-                        this.contacts[i].visible = true;
-                    } else {
+                    if (!this.contacts[i].name.toLowerCase().startsWith(this.search)) {
                         this.contacts[i].visible = false;
                     }
                 }
