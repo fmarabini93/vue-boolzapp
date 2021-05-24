@@ -88,7 +88,7 @@
                                     <div v-for="(message,index) in contacts[activeContact].messages" :class="message.status == 'received' ? 'received' : 'sent'">
                                           <p>{{message.text}}</p>
                                           <p class="bubble-date">{{message.date}}</p>
-                                          <select name="menu" id="nav">
+                                          <select name="menu" class="mySelect">
                                                 <option selected="selected" hidden value="null"></option>
                                                 <option value="info">Message info</option>
                                                 <option value="delete" @click="deleteMessage(index)">Delete message</option>

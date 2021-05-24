@@ -246,12 +246,11 @@ i:hover {
       color: #999999;
 }
 
-#main-right select {
+.mySelect {
       width: 1px;
       position: absolute;
       top: 5px;
       right: 5px;
-      outline: none;
 }
 /* --Bubble messages */
 
