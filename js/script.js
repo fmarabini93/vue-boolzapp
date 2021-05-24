@@ -165,7 +165,6 @@ const app = new Vue(
                     ],
                 }
             ],
-            filteredContacts: [],
             activeContact : 0,
             search: '',
             newMessageSent: "",
