@@ -222,6 +222,7 @@ i:hover {
 .received {
       width: 300px;
       min-height: 50px;
+      position: relative;
       clear: both;
       padding: 2% 2% 5px 2%;
       margin-top: 10px;
@@ -243,6 +244,14 @@ i:hover {
       font-size: 10px;
       text-align: right;
       color: #999999;
+}
+
+#main-right select {
+      width: 1px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      outline: none;
 }
 /* --Bubble messages */
 

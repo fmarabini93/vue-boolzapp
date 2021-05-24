@@ -54,10 +54,10 @@
                                           <div class="chat-info">
                                                 <div>
                                                       <span class="name">{{contact.name}}</span>
-                                                      <p class="inline-b">{{contact.messages[contact.messages.length - 1].text.substr(0, 30)}}<span v-if="contact.messages[contact.messages.length - 1].text.length > 30">&hellip;</span></p>
+                                                      <p v-if="contact.messages.length > 0" class="inline-b">{{contact.messages[contact.messages.length - 1].text.substr(0, 30)}}<span v-if="contact.messages[contact.messages.length - 1].text.length > 30">&hellip;</span></p>
                                                 </div>
                                                 <div>
-                                                      <p class="bubble-date">{{contact.messages[contact.messages.length - 1].date}}</p>
+                                                      <p v-if="contact.messages.length > 0" class="bubble-date">{{contact.messages[contact.messages.length - 1].date}}</p>
                                                 </div>
                                           </div>
                                     </div>
@@ -74,7 +74,7 @@
                                     <div>
                                           <span>{{contacts[activeContact].name}}</span>
                                           <p v-if="typing == 1" class="typing">Typing</p>
-                                          <p v-else>Last seen {{contacts[activeContact].messages[0].date}}</p>
+                                          <p v-else-if="contacts[activeContact].messages.length > 0">Last seen {{contacts[activeContact].messages[0].date}}</p>
                                     </div>
                               </div>
                               <div class="icons">
@@ -85,9 +85,14 @@
                         </div>
                         <div id="main-right" class="overflow">
                               <div class="container clearfix">
-                                    <div v-for="message in contacts[activeContact].messages" :class="message.status == 'received' ? 'received' : 'sent'">
+                                    <div v-for="(message,index) in contacts[activeContact].messages" :class="message.status == 'received' ? 'received' : 'sent'">
                                           <p>{{message.text}}</p>
                                           <p class="bubble-date">{{message.date}}</p>
+                                          <select name="menu" id="nav">
+                                                <option selected="selected" hidden value="null"></option>
+                                                <option value="info">Message info</option>
+                                                <option value="delete" @click="deleteMessage(index)">Delete message</option>
+                                          </select>
                                     </div>
                               </div>
                         </div>

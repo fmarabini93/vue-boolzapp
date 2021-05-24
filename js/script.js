@@ -237,6 +237,10 @@ const app = new Vue(
                         this.contacts[i].visible = false;
                     }
                 }
+            },
+            deleteMessage: function(position) {
+                console.log(position);
+                this.contacts[this.activeContact].messages.splice(position, 1);
             }
         }
     }
