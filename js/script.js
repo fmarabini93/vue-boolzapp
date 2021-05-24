@@ -165,7 +165,9 @@ const app = new Vue(
                     ],
                 }
             ],
+            filteredContacts: [],
             activeContact : 0,
+            search: '',
             newMessageSent: "",
             newMessageReceived: ["Ok", "Hello!", "How are you?", "How's the weather today?", "Please send me a letter", "Remember going to dentist", "Take shoes off when entering home", "Go to grocery", "Fine. thanks", "Wow!"],
             typing: 0
@@ -227,6 +229,15 @@ const app = new Vue(
                     },5000);
                 } else {
                     this.newMessageSent += " :-)";
+                }
+            },
+            filterContacts: function() {
+                for (let i = 0; i < this.contacts.length; i++) {
+                    if (this.contacts[i].name.toLowerCase().startsWith(this.search)) {
+                        this.contacts[i].visible = true;
+                    } else {
+                        this.contacts[i].visible = false;
+                    }
                 }
             }
         }
