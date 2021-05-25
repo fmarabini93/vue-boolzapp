@@ -216,7 +216,6 @@ i:hover {
       min-height: calc(100% - 160px);
       background-image: url(../img/mine.jpg);
 }
-
 /* Bubble messages */
 .sent,
 .received {
@@ -247,10 +246,15 @@ i:hover {
 }
 
 .mySelect {
-      width: 1px;
+      width: 16px;
       position: absolute;
       top: 5px;
-      right: 5px;
+      right: 10px;
+      border: 0;
+      appearance: none;
+      background: transparent;
+      background-image: url(../img/arrow.svg);
+      background-size: cover;
 }
 /* --Bubble messages */
 
