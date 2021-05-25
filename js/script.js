@@ -169,7 +169,8 @@ const app = new Vue(
             search: '',
             newMessageSent: "",
             newMessageReceived: ["Ok", "Hello!", "How are you?", "How's the weather today?", "Please send me a letter", "Remember going to dentist", "Take shoes off when entering home", "Go to grocery", "Fine. thanks", "Wow!"],
-            typing: 0
+            typing: 0,
+            nightMode: 1
         },
         methods: {
             getRndNum : function(min, max) {
@@ -241,6 +242,13 @@ const app = new Vue(
             deleteMessage: function(position) {
                 console.log(position);
                 this.contacts[this.activeContact].messages.splice(position, 1);
+            },
+            darkMode: function() {
+                if (this.nightMode == 0) {
+                    this.nightMode++;
+                } else {
+                    this.nightMode--;
+                }
             }
         }
     }
