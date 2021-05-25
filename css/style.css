@@ -251,6 +251,7 @@ i:hover {
       top: 5px;
       right: 10px;
       border: 0;
+      cursor: pointer;
       appearance: none;
       background: transparent;
       background-image: url(../img/arrow.svg);
