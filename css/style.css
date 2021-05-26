@@ -261,7 +261,7 @@ i:hover {
       transition: 0.5s;
 }
 .dark-mode .chat {
-      border-top: 1px solid #5e5e5e;
+      border-top: 1px solid #333333;
 }
 
 .chat-info {
