@@ -42,9 +42,6 @@ img {
       border-radius: 50%;
       cursor: pointer;
 }
-.img-dark-bkg {
-      background-color: #6d6d6d;
-}
 img:hover {
       transform: scale(1.1);
       transition: 0.5s;
@@ -85,21 +82,13 @@ i:hover {
       top: -1%;
       right: -8%;
       border: none;
-      border-radius: 5px;
+      background: transparent;
       box-shadow: 2px 2px 3px;
       padding: 5px 10px;
       outline: none;
       cursor: pointer;
       font-family: 'Roboto', sans-serif;
       animation: myButton 1s linear infinite;
-}
-.night-mode-light {
-      color: #b1b1b1;
-      background-color: #000000;
-}
-.night-mode-dark {
-      color: #000000;
-      background-color: #a8a8a8;
 }
 @keyframes myButton {
       0% {

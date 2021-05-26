@@ -22,14 +22,14 @@
             <div id="root" class="clearfix">
                   
                   <!-- Toggle night mode -->
-                  <button @click="darkMode" :class="nightMode ? 'night-mode-light' : 'night-mode-dark'" id="night-mode">Toggle theme</button>
+                  <button @click="darkMode" id="night-mode">Toggle theme</button>
                   <!-- /Toggle night mode -->
 
                   <!-- Left side -->
                   <div id="left-side">
                         <div :class="nightMode ? 'light' : 'dark'" class="top vert-align">
                               <div class="top-left vert-align">
-                                    <img :class="nightMode ? '' : 'img-dark-bkg'" src="img/avatar_io.jpg" alt="MyAvatar">
+                                    <img src="img/avatar_io.jpg" alt="MyAvatar">
                                     <span><strong>Me</strong></span>
                               </div>
                               <div class="icons">
