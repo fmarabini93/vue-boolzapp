@@ -19,7 +19,7 @@
             <!-- /Background colors -->
 
             <!-- Vue instance -->
-            <div id="root" class="clearfix">
+            <div id="root" :class="nightMode ? 'dark-mode' : ''" class="clearfix">
                   
                   <!-- Toggle night mode -->
                   <button @click="darkMode" id="night-mode">Toggle theme</button>
@@ -27,7 +27,7 @@
 
                   <!-- Left side -->
                   <div id="left-side">
-                        <div :class="!nightMode ? 'light' : 'dark'" class="top vert-align">
+                        <div class="top vert-align">
                               <div class="top-left vert-align">
                                     <img src="img/avatar_io.jpg" alt="MyAvatar">
                                     <span><strong>Me</strong></span>
@@ -39,21 +39,21 @@
                               </div>
                         </div>
                         <div id="main-left">
-                              <div :class="!nightMode ? 'notifications-light' : 'notifications-dark'" id="notifications" class="vert-align">
+                              <div id="notifications" class="vert-align">
                                     <i class="fas fa-2x fa-bell-slash"></i>
                                     <div>
                                           <span>Receive an alert for new messages</span><br>
                                           <a href="#">Turn on desktop notifications</a>
                                     </div>
                               </div>
-                              <div :class="!nightMode ? 'search-light' : 'search-dark'" id="search" class="vert-align">
-                                    <div :class="!nightMode ? 'search-bar-light' : 'search-bar-dark'" id="search-bar" class="vert-align">
-                                          <i :class="!nightMode ? 'search-icon-light' : 'search-icon-dark'" class="fas fa-search"></i>
-                                          <input :class="!nightMode ? 'search-bar-light' : 'search-bar-dark'" type="text" placeholder="Search or start a new chat" @keyup="filterContacts()" v-model="search">
+                              <div id="search" class="vert-align">
+                                    <div id="search-bar" class="vert-align">
+                                          <i class="fas fa-search"></i>
+                                          <input type="text" placeholder="Search or start a new chat" @keyup="filterContacts()" v-model="search">
                                     </div>
                               </div>
-                              <div :class="!nightMode ? 'chats-light' : 'chats-dark'" id="chats" class="overflow">
-                                    <div v-for="(contact, index) in contacts" v-show="contact.visible" :class="{'active' : index == activeContact}" :class="nightMode == 0 ? 'chat-light' : ''" @click="selectContact(index)" class="chat vert-align">
+                              <div id="chats" class="overflow">
+                                    <div v-for="(contact, index) in contacts" v-show="contact.visible" :class="{'active' : index == activeContact}" @click="selectContact(index)" class="chat vert-align">
                                           <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="#">
                                           <div class="chat-info">
                                                 <div>
@@ -72,7 +72,7 @@
 
                   <!-- Right side -->
                   <div id="right-side">
-                        <div :class="!nightMode ? 'light' : 'dark'" class="top vert-align">
+                        <div class="top vert-align">
                               <div class="top-left vert-align">
                                     <img :src="'img/avatar_'+(activeContact+1)+'.jpg'" alt="Avatar1">
                                     <div>
@@ -87,7 +87,7 @@
                                     <i class="fas fa-2x fa-ellipsis-v"></i>
                               </div>
                         </div>
-                        <div :class="!nightMode ? 'main-right-light-bkg' : 'main-right-dark-bkg'" id="main-right" class="overflow">
+                        <div id="main-right" class="overflow">
                               <div class="container clearfix">
                                     <div v-for="(message,index) in contacts[activeContact].messages" :class="message.status == 'received' ? 'received' : 'sent'">
                                           <p>{{message.text}}</p>
@@ -100,9 +100,9 @@
                                     </div>
                               </div>
                         </div>
-                        <div :class="!nightMode ? 'chat-bottom-light' : 'dark'" class="top vert-align" id="chat-bottom">
+                        <div class="top vert-align" id="chat-bottom">
                               <i @click="newSmile" class="far fa-2x fa-smile"></i>
-                              <input :class="!nightMode ? 'search-bar-light' : 'search-bar-dark'" type="text" placeholder="Type a message" @keyup.enter="newText" v-model="newMessageSent">
+                              <input type="text" placeholder="Type a message" @keyup.enter="newText" v-model="newMessageSent">
                               <i v-if="newMessageSent.length > 0" @click="newText" class="fas fa-2x fa-paper-plane"></i>
                               <i v-else class="fas fa-2x fa-microphone"></i>
                         </div>
