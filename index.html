@@ -13,101 +13,104 @@
             <title>Boolzapp</title>
       </head>
       <body>
-            <!-- Background colors -->
-            <div id="bkg-top"></div>
-            <div id="bkg-main"></div>
-            <!-- /Background colors -->
 
             <!-- Vue instance -->
-            <div id="root" :class="nightMode ? 'dark-mode' : ''" class="clearfix">
-                  
-                  <!-- Toggle night mode -->
-                  <button @click="darkMode" id="night-mode">Toggle theme</button>
-                  <!-- /Toggle night mode -->
+            <div id="root" :class="nightMode ? 'dark-mode' : ''">
 
-                  <!-- Left side -->
-                  <div id="left-side">
-                        <div class="top vert-align">
-                              <div class="top-left vert-align">
-                                    <img src="img/avatar_io.jpg" alt="MyAvatar">
-                                    <span><strong>Me</strong></span>
-                              </div>
-                              <div class="icons">
-                                    <i class="fas fa-2x fa-circle-notch"></i>
-                                    <i class="far fa-2x fa-comment-alt"></i>
-                                    <i class="fas fa-2x fa-ellipsis-v"></i>
-                              </div>
-                        </div>
-                        <div id="main-left">
-                              <div id="notifications" class="vert-align">
-                                    <i class="fas fa-2x fa-bell-slash"></i>
-                                    <div>
-                                          <span>Receive an alert for new messages</span><br>
-                                          <a href="#">Turn on desktop notifications</a>
+                  <!-- Background colors -->
+                  <div id="bkg-top"></div>
+                  <div id="bkg-main"></div>
+                  <!-- /Background colors -->
+
+                  <div class="full-container clearfix">
+                        <!-- Toggle night mode -->
+                        <button @click="darkMode" id="night-mode">Toggle theme</button>
+                        <!-- /Toggle night mode -->
+
+                        <!-- Left side -->
+                        <div id="left-side">
+                              <div class="top vert-align">
+                                    <div class="top-left vert-align">
+                                          <img src="img/avatar_io.jpg" alt="MyAvatar">
+                                          <span><strong>Me</strong></span>
+                                    </div>
+                                    <div class="icons">
+                                          <i class="fas fa-2x fa-circle-notch"></i>
+                                          <i class="far fa-2x fa-comment-alt"></i>
+                                          <i class="fas fa-2x fa-ellipsis-v"></i>
                                     </div>
                               </div>
-                              <div id="search" class="vert-align">
-                                    <div id="search-bar" class="vert-align">
-                                          <i class="fas fa-search"></i>
-                                          <input type="text" placeholder="Search or start a new chat" @keyup="filterContacts()" v-model="search">
+                              <div id="main-left">
+                                    <div id="notifications" class="vert-align">
+                                          <i class="fas fa-2x fa-bell-slash"></i>
+                                          <div>
+                                                <span>Receive an alert for new messages</span><br>
+                                                <a href="#">Turn on desktop notifications</a>
+                                          </div>
                                     </div>
-                              </div>
-                              <div id="chats" class="overflow">
-                                    <div v-for="(contact, index) in contacts" v-show="contact.visible" :class="{'active' : index == activeContact}" @click="selectContact(index)" class="chat vert-align">
-                                          <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="#">
-                                          <div class="chat-info">
-                                                <div>
-                                                      <span class="name">{{contact.name}}</span>
-                                                      <p v-if="contact.messages.length > 0" class="inline-b">{{contact.messages[contact.messages.length - 1].text.substr(0, 30)}}<span v-if="contact.messages[contact.messages.length - 1].text.length > 30">&hellip;</span></p>
-                                                </div>
-                                                <div>
-                                                      <p v-if="contact.messages.length > 0" class="bubble-date">{{contact.messages[contact.messages.length - 1].date}}</p>
+                                    <div id="search" class="vert-align">
+                                          <div id="search-bar" class="vert-align">
+                                                <i class="fas fa-search"></i>
+                                                <input type="text" placeholder="Search or start a new chat" @keyup="filterContacts()" v-model="search">
+                                          </div>
+                                    </div>
+                                    <div id="chats" class="overflow">
+                                          <div v-for="(contact, index) in contacts" v-show="contact.visible" :class="{'active' : index == activeContact}" @click="selectContact(index)" class="chat vert-align">
+                                                <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="#">
+                                                <div class="chat-info">
+                                                      <div>
+                                                            <span class="name">{{contact.name}}</span>
+                                                            <p v-if="contact.messages.length > 0" class="inline-b">{{contact.messages[contact.messages.length - 1].text.substr(0, 30)}}<span v-if="contact.messages[contact.messages.length - 1].text.length > 30">&hellip;</span></p>
+                                                      </div>
+                                                      <div>
+                                                            <p v-if="contact.messages.length > 0" class="bubble-date">{{contact.messages[contact.messages.length - 1].date}}</p>
+                                                      </div>
                                                 </div>
                                           </div>
                                     </div>
                               </div>
                         </div>
-                  </div>
-                  <!-- /Left side -->
+                        <!-- /Left side -->
 
-                  <!-- Right side -->
-                  <div id="right-side">
-                        <div class="top vert-align">
-                              <div class="top-left vert-align">
-                                    <img :src="'img/avatar_'+(activeContact+1)+'.jpg'" alt="Avatar1">
-                                    <div>
-                                          <span>{{contacts[activeContact].name}}</span>
-                                          <p v-if="typing == 1" class="typing">Typing</p>
-                                          <p v-else-if="contacts[activeContact].messages.length > 0">Last seen {{contacts[activeContact].messages[0].date}}</p>
+                        <!-- Right side -->
+                        <div id="right-side">
+                              <div class="top vert-align">
+                                    <div class="top-left vert-align">
+                                          <img :src="'img/avatar_'+(activeContact+1)+'.jpg'" alt="Avatar1">
+                                          <div>
+                                                <span>{{contacts[activeContact].name}}</span>
+                                                <p v-if="typing == 1" class="typing">Typing</p>
+                                                <p v-else-if="contacts[activeContact].messages.length > 0">Last seen {{contacts[activeContact].messages[0].date}}</p>
+                                          </div>
+                                    </div>
+                                    <div class="icons">
+                                          <i class="fas fa-2x fa-search"></i>
+                                          <i class="fas fa-2x fa-paperclip"></i>
+                                          <i class="fas fa-2x fa-ellipsis-v"></i>
                                     </div>
                               </div>
-                              <div class="icons">
-                                    <i class="fas fa-2x fa-search"></i>
-                                    <i class="fas fa-2x fa-paperclip"></i>
-                                    <i class="fas fa-2x fa-ellipsis-v"></i>
-                              </div>
-                        </div>
-                        <div id="main-right" class="overflow">
-                              <div class="container clearfix">
-                                    <div v-for="(message,index) in contacts[activeContact].messages" :class="message.status == 'received' ? 'received' : 'sent'">
-                                          <p>{{message.text}}</p>
-                                          <p class="bubble-date">{{message.date}}</p>
-                                          <select name="menu" class="mySelect">
-                                                <option hidden></option>
-                                                <option value="info">Message info</option>
-                                                <option value="delete" @click="deleteMessage(index)">Delete message</option>
-                                          </select>
+                              <div id="main-right" class="overflow">
+                                    <div class="container clearfix">
+                                          <div v-for="(message,index) in contacts[activeContact].messages" :class="message.status == 'received' ? 'received' : 'sent'">
+                                                <p>{{message.text}}</p>
+                                                <p class="bubble-date">{{message.date}}</p>
+                                                <select name="menu" class="mySelect">
+                                                      <option hidden></option>
+                                                      <option value="info">Message info</option>
+                                                      <option value="delete" @click="deleteMessage(index)">Delete message</option>
+                                                </select>
+                                          </div>
                                     </div>
                               </div>
+                              <div class="top vert-align" id="chat-bottom">
+                                    <i @click="newSmile" class="far fa-2x fa-smile"></i>
+                                    <input type="text" placeholder="Type a message" @keyup.enter="newText" v-model="newMessageSent">
+                                    <i v-if="newMessageSent.length > 0" @click="newText" class="fas fa-2x fa-paper-plane"></i>
+                                    <i v-else class="fas fa-2x fa-microphone"></i>
+                              </div>
                         </div>
-                        <div class="top vert-align" id="chat-bottom">
-                              <i @click="newSmile" class="far fa-2x fa-smile"></i>
-                              <input type="text" placeholder="Type a message" @keyup.enter="newText" v-model="newMessageSent">
-                              <i v-if="newMessageSent.length > 0" @click="newText" class="fas fa-2x fa-paper-plane"></i>
-                              <i v-else class="fas fa-2x fa-microphone"></i>
-                        </div>
+                        <!-- /Right side -->
                   </div>
-                  <!-- /Right side -->
 
             </div>
             <!-- /Vue instance -->

@@ -6,7 +6,7 @@
 }
 
 body {
-      height: 100vh;
+      min-height: 100vh;
       position: relative;
       font-family: 'Roboto', sans-serif;
 }
@@ -70,9 +70,15 @@ i:hover {
       height: 180px;
       background-color: #009587;
 }
+.dark-mode #bkg-top {
+      background-color: #01473f;
+}
 #bkg-main {
-      height: calc(100% - 180px);
+      height: calc(100vh - 180px);
       background-image: linear-gradient(to bottom, #dddbd1, #d1dadb);
+}
+.dark-mode #bkg-main {
+      background-image: linear-gradient(to bottom, #aaa8a2, #646464);
 }
 /* --Background colors */
 
@@ -82,12 +88,14 @@ i:hover {
       top: -1%;
       right: -8%;
       border: none;
+      border-radius: 5px;
       background: transparent;
       box-shadow: 2px 2px 3px;
       padding: 5px 10px;
       outline: none;
       cursor: pointer;
       font-family: 'Roboto', sans-serif;
+      color: #ececec;
       animation: myButton 1s linear infinite;
 }
 @keyframes myButton {
@@ -104,7 +112,7 @@ i:hover {
 /* --Toggle night mode */
 
 /* Vue instance */
-#root {
+.full-container {
       width: 1600px;
       height: 900px;
       position: absolute;
@@ -222,10 +230,17 @@ i:hover {
 
 .active {
       color: #3d3d3d;
-      background-color: #c5c5c5;
+      background-color: #e7e7e7;
+}
+.dark-mode .active {
+      color: #ffffff;
+      background-color: #39505f;
 }
 .active p {
       color: #3d3d3d;
+}
+.dark-mode .active p {
+      color: #ffffff;
 }
 
 #chats {
