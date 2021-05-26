@@ -240,7 +240,6 @@ const app = new Vue(
                 }
             },
             deleteMessage: function(position) {
-                console.log(position);
                 this.contacts[this.activeContact].messages.splice(position, 1);
             },
             darkMode: function () {
