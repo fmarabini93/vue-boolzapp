@@ -289,7 +289,7 @@ i:hover {
 }
 
 #main-right {
-      min-height: calc(100% - 160px);
+      height: calc(100% - 160px);
 }
 .main-right-light-bkg {
       background-image: url(../img/mine.jpg);
@@ -314,11 +314,18 @@ i:hover {
       float: right;
       background-color: #d5f9ba;
 }
+.main-right-dark-bkg .sent {
+      color: #b1b1b1;
+      background-color: #01473f;
+}
 .received {
       float: left;
       background-color: #ffffff;
 }
-
+.main-right-dark-bkg .received {
+      color: #b1b1b1;
+      background-color: #1f2c34;
+}
 .bubble-date {
       padding-top: 5px;
       font-size: 10px;
