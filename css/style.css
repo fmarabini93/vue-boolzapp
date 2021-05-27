@@ -132,6 +132,9 @@ i:hover {
       height: 100%;
       border-right: 1px solid #d6d6d6;
 }
+.dark-mode #left-side {
+      border-right: 1px solid #333333;
+}
 #right-side {
       width: 65%;
       height: 100%;
